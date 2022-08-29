@@ -12,8 +12,8 @@ DROP TABLE IF EXISTS Contactor;
 CREATE TABLE IF NOT EXISTS Patient
 (
 patID varchar(4),
-FName varchar(25),
-LName varchar(25),
+patFName varchar(25),
+patLName varchar(25),
 patPhoneNum varchar(15),
 DOB date,
 PRIMARY KEY (patID)
@@ -28,8 +28,8 @@ IGNORE 1 ROWS;
 CREATE TABLE IF NOT EXISTS Carer
 (
 carerID varchar(4),
-FName varchar(25),
-LName varchar(25),
+carerFName varchar(25),
+carerLName varchar(25),
 carerPhoneNum varchar(15),
 PRIMARY KEY(carerID)
 );
@@ -59,8 +59,8 @@ FIELDS TERMINATED BY ',';
 CREATE TABLE IF NOT EXISTS Worker
 (
 workerID varchar(4),
-FName varchar(25),
-LName varchar(25),
+workerFName varchar(25),
+workerLName varchar(25),
 PRIMARY KEY (workerID)
 );
 
@@ -79,7 +79,8 @@ patID varchar(4),
 carerID varchar(4),
 PRIMARY KEY (contactID),
 FOREIGN KEY (workerID) REFERENCES Worker(workerID),
-FOREIGN KEY (carerID ,patID) REFERENCES Contactor(carerID ,patID)
+FOREIGN KEY (carerID) REFERENCES Contactor(carerID),
+FOREIGN KEY (patID) REFERENCES Contactor(patID)
 );
 
 SET FOREIGN_KEY_CHECKS=0;

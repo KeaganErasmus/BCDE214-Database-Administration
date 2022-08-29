@@ -19,10 +19,10 @@ DOB date,
 PRIMARY KEY (patID)
 );
 -- Loading data into the patient table 
--- SET FOREIGN_KEY_CHECKS=0;
--- LOAD DATA INFILE 'C:/Temp/patient.csv' INTO TABLE Patient
--- FIELDS TERMINATED BY ','
--- IGNORE 1 ROWS;
+SET FOREIGN_KEY_CHECKS=0;
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/patient.csv' INTO TABLE Patient
+FIELDS TERMINATED BY ','
+IGNORE 1 ROWS;
 
 -- Create the Carer table
 CREATE TABLE IF NOT EXISTS Carer

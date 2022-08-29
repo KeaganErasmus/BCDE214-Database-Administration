@@ -44,6 +44,8 @@ CREATE TABLE IF NOT EXISTS Contactor
 (
 carerID varchar(4),
 patID varchar(4),
+FOREIGN KEY (patID) REFERENCES Patient(patID),
+FOREIGN KEY (carerID) REFERENCES Carer(carerID),
 PRIMARY KEY (carerID, patID)
 );
 
@@ -62,6 +64,11 @@ LName varchar(25),
 PRIMARY KEY (workerID)
 );
 
+SET FOREIGN_KEY_CHECKS=0;
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/worker.csv' INTO TABLE Worker
+FIELDS TERMINATED BY ',';
+-- IGNORE 1 ROWS;
+
 -- Create ContactLog table
 CREATE TABLE IF NOT EXISTS ContactLog
 (
@@ -72,13 +79,17 @@ patID varchar(4),
 carerID varchar(4),
 PRIMARY KEY (contactID),
 FOREIGN KEY (workerID) REFERENCES Worker(workerID),
-FOREIGN KEY (patID) REFERENCES Patient(patID),
-FOREIGN KEY (carerID) REFERENCES Carer(carerID),
 FOREIGN KEY (carerID ,patID) REFERENCES Contactor(carerID ,patID)
 );
+
+SET FOREIGN_KEY_CHECKS=0;
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/contactLog.csv' INTO TABLE ContactLog
+FIELDS TERMINATED BY ',';
+-- IGNORE 1 ROWS;
 
 -- testing tables 
 select * from Patient;
 select * from Carer;
 select * from Contactor;
 select * from ContactLog;
+select * from Worker;

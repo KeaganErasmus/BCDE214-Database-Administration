@@ -34,6 +34,11 @@ carerPhoneNum varchar(15),
 PRIMARY KEY(carerID)
 );
 
+SET FOREIGN_KEY_CHECKS=0;
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/carer.csv' INTO TABLE Carer
+FIELDS TERMINATED BY ','
+IGNORE 1 ROWS;
+
 -- Create Contactor table
 CREATE TABLE IF NOT EXISTS Contactor
 (
@@ -41,6 +46,12 @@ carerID varchar(4),
 patID varchar(4),
 PRIMARY KEY (carerID, patID)
 );
+
+SET FOREIGN_KEY_CHECKS=0;
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/contactor.csv' INTO TABLE Contactor
+FIELDS TERMINATED BY ',';
+-- IGNORE 1 ROWS;
+
 
 -- Create Worker table
 CREATE TABLE IF NOT EXISTS Worker
@@ -68,3 +79,6 @@ FOREIGN KEY (carerID ,patID) REFERENCES Contactor(carerID ,patID)
 
 -- testing tables 
 select * from Patient;
+select * from Carer;
+select * from Contactor;
+select * from ContactLog;

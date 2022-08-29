@@ -19,3 +19,14 @@ inner join Contactor
 inner join Patient on Contactlog.patID = Patient.patID;
 
 SELECT * FROM patient_contact;
+
+-- Creating a view to see patients that are over the age of 90
+CREATE VIEW patient_over_90 AS
+select Patient.patID, Patient.patFName, timestampdiff(YEAR, DOB, CURDATE()) AS AGE
+from Contactlog
+inner join Contactor
+inner join Patient on Contactlog.patID = Patient.patID
+where timestampdiff(YEAR, DOB, CURDATE()) >= 90
+group by Patient.patID;
+
+SELECT * FROM patient_over_90;

@@ -2,11 +2,11 @@
 -- Create database healthCare;
 use healthCare;
 
-DROP TABLE IF EXISTS Patient;
-DROP TABLE IF EXISTS Carer;
-DROP TABLE IF EXISTS ContactLog;
-DROP TABLE IF EXISTS Worker;
-DROP TABLE IF EXISTS Contactor;
+-- DROP TABLE IF EXISTS Patient;
+-- DROP TABLE IF EXISTS Carer;
+-- DROP TABLE IF EXISTS ContactLog;
+-- DROP TABLE IF EXISTS Worker;
+-- DROP TABLE IF EXISTS Contactor;
 
 -- Create the Patient table
 CREATE TABLE IF NOT EXISTS Patient

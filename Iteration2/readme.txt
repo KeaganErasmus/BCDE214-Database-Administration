@@ -1,0 +1,2 @@
+In this iteration I have created all my tables with the primary and foreign keys, I have also created data and imported said data through csv's
+I have also created 3 views that can be used to see select data based on the views

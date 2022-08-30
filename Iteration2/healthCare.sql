@@ -20,7 +20,7 @@ PRIMARY KEY (patID)
 );
 -- Loading data into the patient table 
 SET FOREIGN_KEY_CHECKS=0;
-LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/patient.csv' INTO TABLE Patient
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Iteration2/tables/patient.csv' INTO TABLE Patient
 FIELDS TERMINATED BY ','
 IGNORE 1 ROWS;
 
@@ -35,7 +35,7 @@ PRIMARY KEY(carerID)
 );
 
 SET FOREIGN_KEY_CHECKS=0;
-LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/carer.csv' INTO TABLE Carer
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Iteration2/tables/carer.csv' INTO TABLE Carer
 FIELDS TERMINATED BY ','
 IGNORE 1 ROWS;
 
@@ -50,7 +50,7 @@ PRIMARY KEY (carerID, patID)
 );
 
 SET FOREIGN_KEY_CHECKS=0;
-LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/contactor.csv' INTO TABLE Contactor
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Iteration2/tables/contactor.csv' INTO TABLE Contactor
 FIELDS TERMINATED BY ',';
 -- IGNORE 1 ROWS;
 
@@ -65,7 +65,7 @@ PRIMARY KEY (workerID)
 );
 
 SET FOREIGN_KEY_CHECKS=0;
-LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/worker.csv' INTO TABLE Worker
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Iteration2/tables/worker.csv' INTO TABLE Worker
 FIELDS TERMINATED BY ',';
 -- IGNORE 1 ROWS;
 
@@ -84,7 +84,7 @@ FOREIGN KEY (patID) REFERENCES Contactor(patID)
 );
 
 SET FOREIGN_KEY_CHECKS=0;
-LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Itteration2/tables/contactLog.csv' INTO TABLE ContactLog
+LOAD DATA INFILE 'D:/BCDE214/BCDE214-Database-Administration/Iteration2/tables/contactLog.csv' INTO TABLE ContactLog
 FIELDS TERMINATED BY ',';
 -- IGNORE 1 ROWS;
 

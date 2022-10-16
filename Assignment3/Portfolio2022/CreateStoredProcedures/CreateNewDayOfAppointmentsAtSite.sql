@@ -12,7 +12,6 @@ CREATE PROCEDURE createWholeDayAppointments
 	-- No error checking, or checkin gif max Slots is exceeded
 	-- No breaks or variations between numbers of slots for each time
 	-- Have used smalldatetime rather than datetime2 for intermediate variables for ease of addition
-
 	@placeId char(10) = '',					-- The place
 	@day date = NULL,						-- The day
 	@startTime time = NULL,					-- First appointment time

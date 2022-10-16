@@ -17,6 +17,7 @@ BEGIN
 END
 
 -- Test
+EXEC createAppointment @placeID = 'Geraldine ', @slot = 1, @apptTime = '2021-08-2';
 
 
 

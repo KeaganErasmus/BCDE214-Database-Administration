@@ -2,7 +2,7 @@ USE [Vaccinations]
 GO
 
 -- Create the procedure
-CREATE PROCEDURE [bulkLoadPlaces] 
+CREATE PROCEDURE bulkLoadPlacesAmit
 	-- Loads a file of places into the Place table.  No error checking.
 	@fileName varchar(100) = ''	-- The file name where the data is being loaded from
 AS
@@ -58,7 +58,7 @@ BEGIN
 END 
 GO
 -- Testing data
---DELETE FROM Place
---SELECT * FROM Place
---EXEC bulkLoadVaccinators @fileName = 'C:\Temp\Vaccine2021\Sites.csv'
---SELECT * FROM Place
+DELETE FROM Place
+SELECT * FROM Place
+EXEC bulkLoadVaccinators @fileName = 'D:\BCDE214\BCDE214-Database-Administration\Assignment3\Portfolio2022\Vaccine2021Data\Vaccinators.csv'
+SELECT * FROM Place

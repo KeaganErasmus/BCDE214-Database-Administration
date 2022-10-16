@@ -2,6 +2,8 @@
 -- =============================================
 
 -- Write Your Code
+
+
 -- Testing data
 --DELETE FROM Appointment
 GO

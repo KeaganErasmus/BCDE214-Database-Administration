@@ -1,4 +1,7 @@
 -- Write Your Code here
+USE [Vaccinations];
+
+
 -- Testing data
 --DELETE FROM Place
 --SELECT * FROM Place

@@ -27,9 +27,9 @@ BEGIN
 	BULK INSERT #vaccinatorPreferred
 	FROM '''  + @fileName + '''
 	WITH (
-		FIRSTROW = 2,
-		FIELDTERMINATOR = '','',
-		ROWTERMINATOR=''\n''
+	  FIELDTERMINATOR = '','',
+	  ROWTERMINATOR = ''\n'',
+	  FIRSTROW = 2
 	)'
 	EXECUTE (@sqlString)
 
@@ -65,7 +65,7 @@ GO
 
 -- Testing data
 GO
---EXEC bulkLoadVaccinations @fileName = 'C:\Temp\Vaccines2021\SitesVaccinators.csv',@startApptNumber=1500,@endApptNumber=5584
+EXEC bulkLoadVaccinations @fileName = 'D:\BCDE214\BCDE214-Database-Administration\Assignment3\Portfolio2022\Vaccine2021Data\Vaccinators.csv', @startApptNumber=1500,@endApptNumber=5584
 GO
 --SELECT max(id) FROM Appointment WHERE apptTime <'2021-08-27 00:00:00'
 select * from appointment where id > 5580 and id < 5590

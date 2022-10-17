@@ -28,8 +28,8 @@ GO
 
 -- Test
 -- 
---EXEC addPersonToAppointment @id=1437, @personId='AAY0020', @vaccineNumber=1
---SELECT * FROM Appointment WHERE personID IS NOT NULL
+EXEC addPersonToAppointment @id=1437, @personId='AAY0020', @vaccineNumber=1
+SELECT * FROM Appointment WHERE personID IS NOT NULL
 
 
 

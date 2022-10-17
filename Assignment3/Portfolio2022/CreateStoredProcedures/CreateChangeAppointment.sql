@@ -12,7 +12,7 @@ CREATE PROCEDURE changeAppointment
 AS
 BEGIN
 	DECLARE @personId char(12)
-	SET @personId = (SELECT personid FROM Appointment WHERE id = @oldId)
+	SET @personId = (SELECT personId FROM Appointment WHERE id = @oldId)
 	DECLARE @vaccineNumber tinyint
 	SET @vaccineNumber = (SELECT vaccineNumber FROM Appointment WHERE id = @oldId)
 	-- update teh set of old ones
@@ -28,7 +28,4 @@ BEGIN
 END
 
 -- Test
-
-
-
-
+EXEC changeAppointment @oldId = 1032, @newId = 1023, @reason = null, @missed = 1

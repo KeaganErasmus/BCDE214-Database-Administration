@@ -10,9 +10,11 @@ SELECT * FROM [dbo].[Person];
 
 SELECT * FROM [dbo].[Place];
 
-DELETE FROM Place;
-
 SELECT * FROM [dbo].[Vaccinator];
+
+DELETE FROM Place;
+DELETE FROM [dbo].[Appointment];
+DELETE FROM [dbo].[Vaccinator];
 
 -- Bulk inser into Person table
 BULK INSERT [dbo].[Person]

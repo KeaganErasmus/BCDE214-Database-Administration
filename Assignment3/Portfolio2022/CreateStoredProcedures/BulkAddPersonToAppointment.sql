@@ -24,7 +24,6 @@ BEGIN
 				SET @personID = (SELECT TOP 1 NHI FROM AllPeople ORDER BY NEWID())	-- A random perosn from the poeulation
 				IF (SELECT COUNT(NHI) FROM Person WHERE NHI=@personId) = 1 -- Person already exists
 				BEGIN
-					PRINT(@personID);
 					SET @personID = NULL
 				END
 			END
@@ -36,7 +35,8 @@ END
 GO
 
 -- Test
-EXEC bulkAddPeopleToAppointments @startSlot=1500, @endSlot=5800
+DELETE FROM Person
+EXEC bulkAddPeopleToAppointments @startSlot=1000, @endSlot= 1027
 -- Check duplicates
 select personId, count(personId) AS PersonCount from appointment GROUP BY personId having count(personId)>1
-
+SELECT * FROM Appointment

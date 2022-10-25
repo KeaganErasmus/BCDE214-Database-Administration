@@ -50,12 +50,12 @@ BEGIN
 
 	-- the cursor declared 
 	DECLARE newAppointmentCursor CURSOR FOR
-		SELECT placeId FROM #newAppointment
+		SELECT placeId, apptDay, startTime, endTime, timeBetweenAppointments, slots FROM #newAppointment
 		-- Open Cursor
 	OPEN newAppointmentCursor
 	
 	-- Loop through the cursor until there is no more data
-	FETCH NEXT FROM newAppointmentCursor INTO @placeId
+	FETCH NEXT FROM newAppointmentCursor INTO @placeId , @appDay, @startTime, @endTime, @timeBetweenAppointments ,@slots
 	-- We have not started fetching yet!!
 	WHILE @@FETCH_STATUS = 0
 		BEGIN
@@ -65,9 +65,10 @@ BEGIN
 				WHERE placeId = @placeId
 			-- Run the procedure that enters the data
 			
-			EXEC createAppointment  @placeID = @placeId, @slot = @slots, @apptTime = @appDay
+			EXEC [dbo].[createWholeDayAppointments]  @placeId = @placeId, @day = @appDay, @startTime = @startTime, @endTime = @endTime, @timeBetweenAppointments = @timeBetweenAppointments
+													 ,@slots = @slots
 			-- Get the next lot of data
-			FETCH NEXT FROM newAppointmentCursor INTO @placeId
+			FETCH NEXT FROM newAppointmentCursor INTO @placeId , @appDay, @startTime, @endTime, @timeBetweenAppointments ,@slots
 		END
 
 	-- Tidy up
@@ -85,5 +86,4 @@ GO
 EXEC bulkLoadAppointments @fileName = 'D:\BCDE214\Vaccine2021Data\SiteSessions.csv'
 GO
 SELECT count(*) AS AppointmentCount FROM Appointment
-
 

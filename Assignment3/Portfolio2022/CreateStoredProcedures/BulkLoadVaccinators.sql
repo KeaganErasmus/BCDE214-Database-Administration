@@ -59,7 +59,7 @@ END
 
 -- Testing data
 DELETE FROM Vaccinator
-EXEC bulkLoadVaccinators @fileName = 'D:\BCDE214\BCDE214-Database-Administration\Assignment3\Portfolio2022\Vaccine2021Data\Vaccinators.csv'
+EXEC bulkLoadVaccinators @fileName = 'D:\BCDE214\Vaccine2021Data\Vaccinators.csv'
 SELECT * FROM Vaccinator
 
 

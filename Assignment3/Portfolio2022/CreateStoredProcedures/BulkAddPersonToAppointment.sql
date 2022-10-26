@@ -36,7 +36,7 @@ GO
 
 -- Test
 DELETE FROM Person
-EXEC bulkAddPeopleToAppointments @startSlot=1000, @endSlot= 1027
+EXEC bulkAddPeopleToAppointments @startSlot=1055, @endSlot= 1460
 -- Check duplicates
 select personId, count(personId) AS PersonCount from appointment GROUP BY personId having count(personId)>1
 SELECT * FROM Appointment

@@ -11,6 +11,7 @@ BEGIN
 	DECLARE @personId char(10);
 
 	select @id = id ,@personId = personId from Appointment
+	-- id of the changed appointment
 	where id = 1489
 
 	SET @reason = 'Changed appointment'
@@ -19,11 +20,9 @@ BEGIN
 
 	insert into OldAppointment (id, personId, reason, missed)
 	Values (@id, @personId, @reason, 1)
+	-- show the oldAppointment table after the trigger gets activated
 	select * from OldAppointment
 END 
 
+-- TEST
 EXEC addPersonToAppointment @id=1489, @personId='FZC6224', @vaccineNumber=2
-
-SELECT * FROM Appointment
-
-DELETE FROM OldAppointment

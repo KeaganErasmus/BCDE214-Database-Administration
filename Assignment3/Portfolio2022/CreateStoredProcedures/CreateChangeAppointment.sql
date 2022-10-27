@@ -21,11 +21,13 @@ BEGIN
 	IF @missed=0	-- Only delete if changed prior to booking time
 	BEGIN
 		UPDATE Appointment
-			SET personId=NULL WHERE id= @oldId
+			SET personId=@personId WHERE id= @oldId
 	END
 	-- Create teh new appointment
 	EXEC addPersonToAppointment @id=@newId, @personId=@personId, @vaccineNumber=@vaccineNumber
 END
 
 -- Test
-EXEC changeAppointment @oldId = 1032, @newId = 1023, @reason = null, @missed = 1
+EXEC changeAppointment @oldId = 1032, @newId = 1023, @reason = 'asda', @missed = 1
+
+select * from OldAppointment

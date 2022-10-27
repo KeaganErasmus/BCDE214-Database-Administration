@@ -21,7 +21,7 @@ GO
 
 -- Test
 -- 
-EXEC vaccinatePerson @id=1437, @vaccinatorId='12321562', @vialNumber='SC0001432'
+EXEC vaccinatePerson @id=1489, @vaccinatorId='12321562', @vialNumber='SC0001432'
 SELECT * FROM Appointment WHERE vaccinator IS NOT NULL
 
 

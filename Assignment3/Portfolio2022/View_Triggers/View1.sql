@@ -44,5 +44,7 @@ WHERE vaccineNumber >= 1
 SELECT * FROM listPeople
 GO
 
+SELECT * FROM Person
 --A view showing the number of sessions and the number of vaccines all vaccinators have done.  Include those vaccinators that have yet to vaccinate anybody.
-SELECT * FROM Appointment
+SELECT preferredName FROM Vaccinator
+Inner join Appointment on Appointment.vaccinator = vaccinator.iRDNumber

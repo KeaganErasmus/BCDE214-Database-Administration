@@ -27,4 +27,5 @@ BEGIN
 END
 
 -- TEST 
-
+select * from Appointment
+EXEC addPersonToAppointment @id = 1855, @personId = 'ADA0388', @vaccineNumber = 3

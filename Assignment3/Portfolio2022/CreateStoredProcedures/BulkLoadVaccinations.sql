@@ -65,7 +65,7 @@ GO
 
 -- Testing data
 GO
-EXEC bulkLoadVaccinations @fileName = 'D:\BCDE214\Vaccine2021Data\Vaccinators.csv', @startApptNumber=1055,@endApptNumber=1460
+EXEC bulkLoadVaccinations @fileName = 'D:\BCDE214\Vaccine2021Data\Vaccinators.csv', @startApptNumber=1489,@endApptNumber=1894
 GO
 SELECT max(id) FROM Appointment WHERE apptTime <'2021-08-27 00:00:00'
 select * from appointment where id > 1100 and id < 1300

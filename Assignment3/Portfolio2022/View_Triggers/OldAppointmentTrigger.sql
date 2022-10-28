@@ -1,5 +1,7 @@
 USE Vaccinations
 GO
+ 
+DROP TRIGGER IF EXISTS appointmentChange
 
 CREATE OR ALTER TRIGGER appointmentChange
 ON [dbo].[Appointment]
@@ -25,4 +27,5 @@ BEGIN
 END 
 
 -- TEST
+DELETE FROM OldAppointment
 EXEC addPersonToAppointment @id=1489, @personId='FZC6224', @vaccineNumber=2
